@@ -1,0 +1,179 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Define color variables */
+:root {
+    --color-primary-1: #8BC34A; /* Verde principal */
+    --color-primary-2: #8BC34AA6; /* Verde mais claro */
+
+    --color-neutral-1: #f8fafc; /* Branco suave */
+    --color-neutral-2: #24232b; /* Cinza escuro */
+    --color-neutral-3: #13121a; /* Fundo preto */
+}
+
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-neutral-3);
+}
+
+/* Container */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background-color: var(--color-neutral-2);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#password_img {
+    width: 100px;
+}
+
+#title {
+    color: var(--color-neutral-1);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Password */
+#password_container {
+    width: 100%;
+    max-width: 400px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-neutral-2);
+    color: var(--color-neutral-1);
+    border-radius: 8px;
+    padding: 8px 18px;
+}
+
+#password_container.show {
+    display: flex;
+}
+
+#password {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Copy Button */
+#copy {
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary-1);
+    height: 40px;
+    width: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.4s;
+}
+
+#copy:hover {
+    color: var(--color-primary-2);
+}
+
+/* Items */
+#password_items {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--color-neutral-2);
+    color: var(--color-neutral-1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+}
+
+.item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+#size {
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-neutral-1);
+    color: var(--color-neutral-3);
+    font-weight: bold;
+}
+
+#size::-webkit-inner-spin-button,
+#size::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+#size:focus {
+    outline: 1px solid var(--color-primary-1);
+}
+
+/* Generate Button */
+#generate {
+    background-color: var(--color-primary-1);
+    border: none;
+    margin-top: 12px;
+    padding: 10px 0px;
+    border-radius: 4px;
+    color: var(--color-neutral-3);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+#generate:hover {
+    background-color: var(--color-primary-2);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    #container {
+        width: 90%;
+        padding: 16px;
+    }
+
+    #password_items {
+        width: 100%;
+    }
+
+    #password_container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #password {
+        font-size: 12px;
+    }
+
+    #copy {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #generate {
+        width: 100%;
+    }
+}
